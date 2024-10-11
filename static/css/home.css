@@ -1,0 +1,22 @@
+body {
+    background-color: red;
+}
+.logo {
+    max-width: 100px;
+}
+.name {
+    color: #00796B;
+    font-size: 2rem;
+}
+.slogan {
+    color: #757575;
+}
+.continue-btn {
+    border-radius: 20px;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .logo, .name, .slogan {
+        text-align: center;
+    }
+}

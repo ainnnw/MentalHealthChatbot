@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>botchat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+     <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="header">
+        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/back2.png') }}" alt="Logo"></a>
+        <h1>KonsulBot</h1>
+    </div>
+    <div class="container-chat">
+        
+        <div id="chat-container"></div>
+        <div class="form mt-2 mb-3">
+            <input type="text" id="message-input" placeholder="Input your question..."><button id="send-button"><img src="{{ url_for('static', filename='images/paper.png') }}" alt="Send"></button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#send-button").click(function() {
+                var message = $("#message-input").val();
+                if (!message.trim()) return; // Jangan kirim pesan kosong
+
+                $.ajax({
+                    url: "/chat",
+                    type: "POST",
+                    dataType: "json",
+                    data: { message: message },
+                    success: function(response) {
+                        // Tambahkan pesan pengguna
+                        $("#chat-container").append("<p class='user'><strong>You:<br></strong> " + message + "</p>");
+                        
+                        // Buat elemen baru untuk respons bot dengan ID unik
+                        var timestamp = Date.now();
+                        var botMessageId = "bot-response-" + timestamp;
+                        var botMessageContainer = $("<p class='bot'><strong>Bot:<br></strong> <span id='" + botMessageId + "'></span></p>");
+                        $("#chat-container").append(botMessageContainer);
+                        
+                        // Inisialisasi TypeIt pada elemen baru
+                        new TypeIt("#" + botMessageId, {
+                            strings: response,
+                            speed: 50,
+                            waitUntilVisible: true,
+                            afterComplete: function(instance) {
+                                instance.destroy(); // Menghentikan TypeIt dan menghilangkan kursor
+                            }
+                        }).go();
+
+                        // Kosongkan input pesan
+                        $("#message-input").val("");
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

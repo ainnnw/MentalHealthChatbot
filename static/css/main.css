@@ -1,0 +1,300 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0f2f1;
+  color: #006064;
+}
+/* homee */
+.logo{
+  width: 400px;
+  height: 400px;
+  margin-left: 70%;
+}
+.name {
+  color: #00796B;
+  font-size: 50px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+}
+.subtext {
+  color: #00796B;
+  font-size: 25px;
+  font-weight: 600;
+}
+.slogan {
+  color: #757575;
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+.continue-btn {
+  border-radius: 20px;
+  width: 25%;
+  height: 5%;
+  background-color: #00796B;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+
+/* halamana chat */
+.header {
+  width: 100%;
+  border-radius: 20px;
+  background-color: white;
+  height: 70px;
+  display: flex;
+  z-index: 999;
+  position: fixed;
+}
+.header h1 {
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.header img {
+  padding-left: 100px;
+  width: 34px;
+  height: 30px;
+  padding-top: 15px;
+  filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);
+
+}
+.container-chat {
+  height: 90vh;
+  width: 100%;
+
+  background-color: #e0f2f1;
+  border-radius: 8px;
+
+  top: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.responses {
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  padding: 20px;
+  border-radius: 5px;
+  line-height: 1.6;
+}
+.responses p {
+  margin-bottom: 10px;
+}
+.responses ul {
+  list-style-type: decimal;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #00796b;
+}
+
+#chat-container {
+  margin: 20px 0;
+  border-radius: 8px;
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  width: 37%;
+  text-align: center;
+  margin-left: 30%;
+  margin-bottom: 30px;
+  position: fixed;
+  bottom: 0;
+  height: auto    ;
+}
+.send-image {
+  margin-bottom: 20px; /* Space between the image and form */
+}
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #b2dfdb;
+  border-radius: 20px;
+  margin-right: 10px;
+  height: auto;
+  font-size:15px;
+  padding-left:5%;
+  font-family: "Nunito", sans-serif;
+
+}
+
+#send-button {
+  margin-left: -10%;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ffffff00;
+  position: relative;
+}
+#send-button img {
+  width: 20px;
+  height: 20px;
+
+}
+.user, .bot {
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+.user {
+  background-color: #b2dfdb;
+  text-align: left;
+  margin-left: 20%;
+  padding-bottom:20px ;
+}
+.bot {
+  background-color: #4db6ac;
+  text-align: left;
+  color: #ffffff;
+  margin-right: 20%;
+  white-space: pre-line;
+}
+.bot strong::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.bot span {
+    display: block;
+}
+
+/* Responsive design */
+
+/* 800px */
+@media (max-width: 900px) {
+  .container-chat {
+      width: 100%;
+      height: 90vh;
+  }
+  .logo{
+    justify-content: center;
+    align-items: center;
+    margin-left: 45%;
+    width: 400px;
+    height: 400px;
+  }
+
+  .name{
+    font-size: 45px;
+   
+  }
+  .slogan{
+    padding-bottom: 10px;
+  }
+  /* bot */
+  .form{
+    width: 70%;
+    margin-left: 15%;
+}
+.bot{
+  margin-right: 5%;
+}
+.user{
+  margin-right: 5%;
+}
+#chat-container {
+  width: 70%;
+  margin-left: 15%;
+}
+.continue-btn{
+  margin-top: 30px;
+}
+.container-chat{
+  margin:0
+}
+}
+/* 600px */
+@media (max-width: 600px) {
+  .container-chat {
+      width: 100%;
+      height: 85vh;
+  }
+  
+  #message-input {
+      margin-right: 5px;
+  }
+  #send-button {
+      padding: 8px;
+  }
+  #send-button img {
+      width: 18px;
+      height: 18px;
+  }
+  .continue-btn{
+    width: 50%;
+    margin: 0;
+    height: 5%;
+  }
+  .logo{
+    width: 300px;
+    height: 300px;
+    margin:0;
+  }
+  .name{
+    font-size: 35px;
+  }
+  .slogan{
+    padding-bottom: 10px;
+  }
+  /* bot */
+  .header{
+    height: 6%;
+    
+  }
+  .header h1{
+    font-size: 20px;
+    
+  }
+  .header img{
+    width: 20px;
+    height: 20px;
+    left: 5%;
+
+
+  }
+  .form{
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 50px;
+  }
+  #send-button{
+    margin-left: -20%;
+  }
+  .bot{
+    margin-right: 5%;
+  }
+  .user{
+    margin-right: 5%;
+  }
+  #chat-container {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
