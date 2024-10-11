@@ -18,11 +18,10 @@ Menyediakan layanan konseling secara realtime secara geratis
       <li>Falsk</li>
     </ul>
   <li>Metode Algoritma : Neura Network </li>
+  <li>Dataset : didapatkan dengan diskusi ahli psikologi</li>
 
-  <li>Dataset :</li>
-    <br>
-    didapatkan dengan diskusi ahli psikologi :
-      ![Surat keaslian Data](https://github.com/user-attachments/assets/cf1a90ec-46f4-4e67-95ef-1956a1da2482)
+
+![Surat keaslian Data](https://github.com/user-attachments/assets/cf1a90ec-46f4-4e67-95ef-1956a1da2482)
 # Demo
 
 [![Watch the video](https://github.com/user-attachments/assets/91d491b8-0059-4979-ac71-d7d51f9c3261)](https://github.com/user-attachments/assets/d8274d6f-76e7-4ec4-9724-58de81a9d9ba)
